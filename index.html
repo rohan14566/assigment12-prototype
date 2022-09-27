@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+ <h4>Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</h4>
+         const parent={
+     name:"John",
+     age:23,
+     hobby:"Swimming"
+ }
+ const child={
+     location:"Solapur",
+     title:"developer"
+ }
+
+ child.__proto__=parent;
+ console.log(child.name);
+ console.log(child.__proto__);
+
+ O/P:-
+ john
+ name:"John",
+ age:23,
+  hobby:"Swimming"
+
+   <h4>Write code to explain prototype chaining</h4>
+   let father={
+     property: "1 bhk",
+     location:"kolhapur",
+     getDetails:function(){
+         console.log(this.property,this.location)
+     }
+
+ };
+ let child={
+     address:'at/post nesari',
+     Dist:'kolhapur'
+ }
+ child._proto_=father;
+ console.log(child._proto_.property)
+ father.getDetails(); 
+
+     output:1 bhk
+            1bhk kolhapur
+
+   <h4>Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays.</h4>
+   function sum(arr)
+   let sum = 0;
+   for(let i = 0; i < arr.length; i++)
+   {
+       sum = sum + arr[i];
+   }
+   return sum;
+let arr = [12, 3, 4, 15];/ console.log(sum(arr));
+
+  output:34 
+
+ <h4>Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h4>
+ let obj={
+     property: "1 bhk",
+     villa:"nesari",
+     address:'At/post-kolhpur',
+     Dist:'klhapur'
+ }
+ let result=Object.keys(obj)
+ console.log(result)
+
+ output:
+ property,villa,address,Dist
+
+</pre>
+</body>
+</html>
